@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@model loginScratch.Models.log_in
+@using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "Login failed");
+        <div>
+            <fieldset>
+                <legend>Login</legend>
+                <div>@Html.LabelFor(u=>u.email)</div>
+                <div>
+                    @Html.TextBoxFor(u=>u.email)
+                    @Html.ValidationMessageFor(u=>u.email)
+                </div>
+                <div>@Html.LabelFor(u=>u.pass)</div>
+                <div>
+                    @Html.PasswordFor(u=>u.pass)
+                    @Html.ValidationMessageFor(u=>u.pass)
+                </div>
+                <input type="submit" value="Log in" />
+            </fieldset>
+        </div>
+}
